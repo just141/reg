@@ -1,0 +1,138 @@
+.oblast {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    max-width: 800px;
+    align-items: center;
+    background-color: lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin-left: 50px;
+    ;
+}
+
+.block {
+    margin-left: 40px;
+}
+
+.mini_text {
+    font-size: 12px;
+}
+
+.text {
+    font-size: 22px;
+}
+
+.btn {
+    display: flex;
+    margin-left: 40px;
+}
+
+.btn_del {
+    margin-left: 40px;
+}
+
+.window {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.window_content {
+    margin: 100px auto 0px auto;
+    width: 212px;
+    height: 220px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.red_line {
+    padding-top: 10px;
+}
+
+.red_line_btn {
+    padding-top: 20px;
+    padding-left: 66px;
+}
+
+.win_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+._close {
+    margin-left: 40px;
+}
+
+.btn_close {
+    display:inline-block;
+    padding:0;
+    width:30px;
+    height:30px;
+    border:none;
+    background-color: #fff;
+    margin-top: -9px;
+    padding-left: 9px;
+}
+
+.btn_ {
+    display:inline-block;
+    padding:0;
+    width:30px;
+    height:30px;
+    border:none;
+    background-color: lightgray;
+}
+
+.panel {
+    display: flex;
+    background-color: darkkhaki;
+    width: 1000px;
+    border: double;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 0px #000
+}
+
+.btn_add_user {
+    display:inline-block;
+    padding:0;
+    width:40px;
+    height:40px;
+    border:none;
+    background-color: darkkhaki;
+    margin-top: 25px;
+    margin-left: 245px;
+}
+
+#users_list {
+    background-color: gainsboro;
+    width: 900px;
+    padding-top: 1px;
+    padding-bottom: 15px;
+    border-radius: 0px 0px 5px 5px;
+    margin-left: 54px;
+    box-shadow: 0px 5px 10px 0px #000;
+}
+
+.cont {
+    margin-left: 23%;
+}
+
+.h1_ {
+    margin-left: 244px;
+}
+
+.add_btn {
+    margin-left: -77px;
+}
+
+.body_ {
+    background-color: lavender;
+}

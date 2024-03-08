@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="800px"
+   height="800px"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg961"
+   sodipodi:docname="add_user_icon.svg"
+   inkscape:version="1.0.2 (1.0.2+r75+1)">
+  <metadata
+     id="metadata967">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>user</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs965" />
+  <sodipodi:namedview
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1861"
+     inkscape:window-height="1025"
+     id="namedview963"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:zoom="0.3800699"
+     inkscape:cx="292.57277"
+     inkscape:cy="163.02491"
+     inkscape:window-x="59"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg961" />
+  <title
+     id="title956">user</title>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="icon"
+       fill="#000000"
+       transform="translate(85.333333, 42.666667)">
+      <path
+         id="user"
+         style="stroke-width:1.5625"
+         d="M 400 66.666016 C 326.36203 66.666016 266.66602 126.36203 266.66602 200 C 266.66602 273.63797 326.36203 333.33398 400 333.33398 C 473.63797 333.33398 533.33398 273.63797 533.33398 200 C 533.33398 126.36203 473.63797 66.666016 400 66.666016 z M 400 133.33398 C 436.81898 133.33398 466.66602 163.18102 466.66602 200 C 466.66602 236.81898 436.81898 266.66602 400 266.66602 C 363.18102 266.66602 333.33398 236.81898 333.33398 200 C 333.33398 163.18102 363.18102 133.33398 400 133.33398 z M 333.33398 400 C 222.87703 400 133.33398 489.54305 133.33398 600 L 133.33398 733.33398 L 499.21875 733.33398 A 147.45157 147.45157 0 0 1 446.16211 666.66602 L 200 666.66602 L 200 600 C 200 526.36203 259.69602 466.66602 333.33398 466.66602 L 466.66602 466.66602 C 486.09214 466.66602 504.54785 470.82413 521.19336 478.29297 A 147.45157 147.45157 0 0 1 583.14453 464.64648 A 147.45157 147.45157 0 0 1 617.54102 468.71484 C 580.87499 426.6137 526.87962 400 466.66602 400 L 333.33398 400 z "
+         transform="matrix(0.64,0,0,0.64,-85.333333,-42.666667)" />
+    </g>
+  </g>
+  <g
+     id="Page-1-3"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     transform="matrix(0.41375016,0,0,0.41375016,190.00273,368.11527)">
+    <g
+       id="drop"
+       fill="#000000"
+       transform="translate(42.666667,42.666667)">
+      <path
+         d="m 415.76731,-196.60026 c 56.57952,0 110.84169,22.47613 150.84945,62.48389 40.00776,40.007763 62.48389,94.269933 62.48389,150.849443 0,117.820747 -95.51259,213.333337 -213.33334,213.333337 -117.82074,0 -213.33333,-95.51259 -213.33333,-213.333337 0,-117.820743 95.51259,-213.333333 213.33333,-213.333333 z m 0,42.66667 c -94.25659,0 -170.66666,76.410073 -170.66666,170.666663 0,94.256597 76.41007,170.666667 170.66666,170.666667 45.26362,0 88.67335,-17.9809 120.67956,-49.98711 32.00621,-32.00621 49.98711,-75.415937 49.98711,-120.679557 0,-94.25659 -76.41007,-170.666663 -170.66667,-170.666663 z m 21.33334,64.000003 -6.7e-4,85.3333299 h 85.334 V 38.066413 l -85.334,-6.7e-4 6.7e-4,85.333997 H 394.43398 V 38.065743 l -85.33333,6.7e-4 V -4.6002571 h 85.33333 V -89.933587 Z"
+         id="add-workorder" />
+    </g>
+  </g>
+</svg>

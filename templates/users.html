@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список пользователей</title>
+    <script type=text/javascript src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+    <link rel="stylesheet" href="../static/css/users.css">
+</head>
+<body class="body_">
+    <div class="cont">
+        <div class="panel">
+            <div><h1 class="h1_">Список всех пользователей</h1></div>
+            <div class="add_btn">
+                <button class="btn_add_user" onclick="Show_reg()">
+                    <img src = "{{url_for('static', filename='images/add_user_icon.svg')}}" width="40" height="40">
+                </button>
+            </div>
+        </div>
+        <div id="users_list">
+        {% for i in data %}
+            <div class="oblast" id="oblast_{{i[0]}}">
+                <div class="block">
+                    <div class="mini_text">Логин - </div>
+                    <div class="text" id="login_{{i[0]}}">{{i[1]}}</div>
+                </div>
+                <div class="block">
+                    <div class="mini_text">Роль - </div>
+                    <div class="text" id="role_{{i[0]}}">{{i[2]}}</div>
+                </div>
+                <div class="block">
+                    <div class="mini_text">Дата регистрации - </div>
+                    <div class="text">{{i[3]}}</div>
+                </div>
+                <div class="btn">
+                    <div class="btn_red">
+                        <button class="btn_" onclick="Show_red('{{i[0]}}')">
+                            <img src = "{{url_for('static', filename='images/edit_user_icon.svg')}}" width="30" height="30">
+                        </button>
+                    </div>
+                    <div class="btn_del">
+                        <button class="btn_" onclick="del_user('{{i[0]}}')">
+                            <img src = "{{url_for('static', filename='images/del_user_icon.svg')}}" width="30" height="30">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="window" id="win_reg">
+            <div class="window_content">
+                <div class="win_title">
+                    <div>Регистрация</div>
+                    <div class="_close">
+                        <button class="btn_close" onclick="Hide_reg()">
+                            <img src = "{{url_for('static', filename='images/close_icon.svg')}}" width="30" height="30">
+                        </button>
+                    </div>
+                </div>
+                <form action="/add_user" method="post" id="reg_form">
+                    <div class="red_line">
+                        Логин
+                        <input type="text" id="login_reg_input" name="login_reg_input">
+                    </div>
+                    <div class="red_line">
+                        Пароль
+                        <input type="password" id="password_reg_input" name="password_reg_input">
+                    </div>
+                    <div class="red_line">
+                        Роль
+                        <input type="text" id="role_reg_input" name="role_reg_input">
+                    </div>
+                    <div class="red_line_btn">
+                        <input type="button" value="Сохранить" onclick="add_user();">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="window" id="win_red">
+            <div class="window_content">
+                <div class="win_title">
+                    <div>Редактирование</div>
+                    <div class="_close">
+                        <button class="btn_close" onclick="Hide_red()">
+                            <img src = "{{url_for('static', filename='images/close_icon.svg')}}" width="30" height="30">
+                        </button>
+                    </div>
+                </div>
+                <form method="post" id="red_form">
+                    <div class="red_line">
+                        Логин
+                        <input type="text" id="login_red_input" name="login_red_input">
+                    </div>
+                    <div class="red_line">
+                        Пароль
+                        <input type="password" id="password_red_input" name="password_red_input">
+                    </div>
+                    <div class="red_line">
+                        Роль
+                        <input type="text" id="role_red_input" name="role_red_input">
+                    </div>
+                    <div class="red_line_btn" id="red_line_btn">
+                    
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+function add_user() {
+    var login = this.login_reg_input.value;
+    var password = this.password_reg_input.value;
+    var role = this.role_reg_input.value;
+    if (login.length == 0 || password.length == 0 || role.length == 0) {
+        alert('Все поля должны быть заполнены!');
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "/add_user",
+            data: {'login':login, 'password':password, 'role':role},
+            success: function(response) {
+                var json = jQuery.parseJSON(response)
+                if (json.result == 1) {
+                    alert('Пользователь успешно создан!');
+                    const $users_list = document.querySelector('#users_list');
+                    $users_list.insertAdjacentHTML('afterbegin',
+                    `<div class="oblast" id="oblast_${json.id}">
+                        <div class="block">
+                            <div class="mini_text">Логин - </div>
+                            <div class="text" id="login_${json.id}">${json.login}</div>
+                        </div>
+                        <div class="block">
+                            <div class="mini_text">Роль - </div>
+                            <div class="text" id="role_${json.id}">${json.role}</div>
+                        </div>
+                        <div class="block">
+                            <div class="mini_text">Дата регистрации - </div>
+                            <div class="text">${json.date}</div>
+                        </div>
+                        <div class="btn">
+                            <div class="btn_red">
+                                <button class="btn_" onclick="Show_red('${json.id}')">
+                                    <img src = "{{url_for('static', filename='images/edit_user_icon.svg')}}" width="30" height="30">
+                                </button>
+                            </div>
+                            <div class="btn_del">
+                                <button class="btn_" onclick="del_user('${json.id}')">
+                                    <img src = "{{url_for('static', filename='images/del_user_icon.svg')}}" width="30" height="30">
+                                </button>
+                            </div>
+                        </div>
+                    </div>`);
+                    $("#win_reg").hide();
+                } else if (json.result == 2) {
+                    alert('Пользователь c таким логином уже существует!');
+                };
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    };
+};
+
+function edit_user(id) {
+    var login = this.login_red_input.value;
+    var password = this.password_red_input.value;
+    var role = this.role_red_input.value;
+    $.ajax({
+        type: "POST",
+        url: "/edit_user",
+        data: {'id':id, 'login':login, 'password':password, 'role':role},
+        success: function(response) {
+            var json = jQuery.parseJSON(response)
+            if (json.result == 1) {
+                if (json.login.length != 0) $(`#login_${id}`).html(json.login);
+                if (json.role.length != 0) $(`#role_${id}`).html(json.role);
+                alert('Данные пользователя успешно изменены!');
+                $("#win_red").hide();
+            } else if (json.result == 2) {
+                alert('Поле логин не было изменено,\nтак как пользователь c таким логином уже существует!')
+            };
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    }); 
+};
+
+function del_user(id) {
+    $.ajax({
+        type: "POST",
+        url: "/del_user",
+        data: {'id':id},
+        success: function(response) {
+            let headingElement = document.querySelector(`#oblast_${id}`);
+            headingElement.style.display = 'none';
+            alert('Пользователь успешно удален!');
+            },
+        error: function(error) {
+            console.log(error);
+            }
+        });
+};
+
+$(document).ready(function(){
+    Hide_reg();
+    Hide_red();
+});
+
+function Hide_reg(){
+    $("#win_reg").hide();
+};
+
+function Show_reg(){
+    $("#win_reg").show();
+};
+
+function Hide_red(){
+    $("#win_red").hide();
+};
+
+function Show_red(id){
+    $("#win_red").show();
+    $("#red_line_btn").html(`<input type="button" value="Сохранить" onclick="edit_user(${id})">`);
+}
+</script>
+</html>
